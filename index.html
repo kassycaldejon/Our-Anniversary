@@ -5,745 +5,586 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>For Maki ♡</title>
 
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=DM+Serif+Display:ital@0;1&family=Poppins:wght@300;400;500;600&display=swap');
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600&family=DM+Serif+Display&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
+<style>
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 body {
-    margin: 0;
-    background:
-        radial-gradient(circle at 15% 20%, rgba(255,255,255,.8) 0 3px, transparent 4px),
-        radial-gradient(circle at 80% 10%, rgba(255,255,255,.7) 0 2px, transparent 3px),
-        linear-gradient(135deg, #fff4f8, #ffe3ed, #fceef8);
-    background-size: 160px 160px, 210px 210px, cover;
-    color: #714957;
-    font-family: 'Poppins', sans-serif;
-    overflow-x: hidden;
+  margin: 0;
+  color: #704b58;
+  background:
+    radial-gradient(circle at 15% 20%, #fff 0 3px, transparent 4px),
+    radial-gradient(circle at 80% 70%, #fff 0 2px, transparent 3px),
+    linear-gradient(135deg, #fff8fa, #fcecf2, #fff9f6);
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
 }
 
-/* FLOATING HEARTS */
-
-.heart {
-    position: fixed;
-    bottom: -30px;
-    color: #f29ab6;
-    font-size: 20px;
-    opacity: .55;
-    animation: floatUp 8s linear infinite;
-    pointer-events: none;
-    z-index: 0;
+section {
+  min-height: 100vh;
+  padding: 70px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.heart:nth-child(1) { left: 8%; animation-delay: 0s; }
-.heart:nth-child(2) { left: 25%; animation-delay: 3s; }
-.heart:nth-child(3) { left: 45%; animation-delay: 1s; }
-.heart:nth-child(4) { left: 65%; animation-delay: 5s; }
-.heart:nth-child(5) { left: 85%; animation-delay: 2s; }
-
-@keyframes floatUp {
-    from {
-        transform: translateY(0) rotate(0deg);
-        opacity: 0;
-    }
-    20% { opacity: .6; }
-    to {
-        transform: translateY(-110vh) rotate(25deg);
-        opacity: 0;
-    }
-}
-
-/* OPENING */
-
-.hero {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 30px;
-    position: relative;
-    z-index: 1;
-}
-
-.hero-card {
-    max-width: 700px;
-    padding: 55px 35px;
-    background: rgba(255,255,255,.72);
-    border: 2px solid rgba(255,255,255,.9);
-    border-radius: 35px;
-    box-shadow: 0 20px 60px rgba(176,101,128,.18);
-    backdrop-filter: blur(10px);
-    animation: appear 1.5s ease;
-}
-
-.small {
-    font-size: 14px;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    color: #c77b98;
+h1, h2 {
+  font-family: 'DM Serif Display', serif;
+  font-weight: 400;
 }
 
 h1 {
-    font-family: 'DM Serif Display', serif;
-    font-size: clamp(55px, 12vw, 100px);
-    margin: 15px 0 5px;
-    color: #c95f85;
-    font-weight: 400;
+  font-size: clamp(55px, 12vw, 100px);
+  color: #b65f78;
+  margin: 10px 0;
 }
 
-.hero p {
-    font-family: 'Caveat', cursive;
-    font-size: 30px;
-    margin: 5px;
+h2 {
+  font-size: clamp(38px, 7vw, 60px);
+  color: #a95770;
+  margin: 10px 0 30px;
+}
+
+p {
+  line-height: 1.8;
+}
+
+/* floating decorations */
+.decor {
+  position: fixed;
+  pointer-events: none;
+  color: #d88da2;
+  opacity: .5;
+  font-size: 22px;
+  animation: float 5s ease-in-out infinite;
+  z-index: 0;
+}
+
+.d1 { top: 15%; left: 8%; }
+.d2 { top: 30%; right: 10%; animation-delay: 1s; }
+.d3 { bottom: 20%; left: 15%; animation-delay: 2s; }
+.d4 { bottom: 12%; right: 15%; animation-delay: 3s; }
+
+@keyframes float {
+  0%,100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-15px) rotate(8deg); }
+}
+
+/* HOME */
+.home-card {
+  position: relative;
+  z-index: 1;
+  width: min(440px, 92vw);
+  padding: 55px 35px;
+  text-align: center;
+  background: rgba(255,255,255,.72);
+  border: 1px solid rgba(190,120,140,.18);
+  border-radius: 18px;
+  box-shadow: 0 25px 70px rgba(160,90,110,.13);
+  transform: rotate(-1deg);
+}
+
+.tiny {
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  font-size: 11px;
+  color: #9c7b85;
+}
+
+.subtitle {
+  font-family: 'Caveat', cursive;
+  font-size: 27px;
+  color: #76515d;
 }
 
 .date {
-    font-size: 14px;
-    margin-top: 20px;
-    color: #a56b80;
+  font-size: 13px;
+  color: #92727c;
+  margin: 18px 0 30px;
 }
 
-.open-btn {
-    display: inline-block;
-    margin-top: 30px;
-    padding: 14px 30px;
-    border-radius: 50px;
-    border: none;
-    background: #df87a6;
-    color: white;
-    font-family: 'Poppins';
-    font-size: 14px;
-    cursor: pointer;
-    box-shadow: 0 8px 20px rgba(210,110,145,.25);
-    transition: .3s;
+.btn {
+  display: inline-block;
+  padding: 13px 28px;
+  border-radius: 30px;
+  background: #c97891;
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(190,90,120,.2);
+  transition: .3s;
 }
 
-.open-btn:hover {
-    transform: translateY(-3px) scale(1.03);
+.btn:hover {
+  transform: translateY(-3px) scale(1.03);
+  background: #b9637c;
 }
 
-/* SECTIONS */
-
-section {
-    max-width: 1050px;
-    margin: auto;
-    padding: 90px 25px;
-    position: relative;
-    z-index: 1;
-}
-
-.section-title {
-    text-align: center;
-    margin-bottom: 50px;
-}
-
-.section-title span {
-    font-family: 'Caveat', cursive;
-    font-size: 23px;
-    color: #d57e9d;
-}
-
-.section-title h2 {
-    font-family: 'DM Serif Display', serif;
-    font-size: 48px;
-    font-weight: 400;
-    margin: 5px;
-    color: #9f536e;
-}
-
-/* SCRAPBOOK */
-
+/* STORY */
 .story {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 25px;
+  text-align: center;
+  max-width: 800px;
 }
 
-.note {
-    background: #fffdf9;
-    padding: 28px;
-    min-height: 220px;
-    box-shadow: 0 8px 25px rgba(130,75,95,.12);
-    transform: rotate(-1deg);
-    position: relative;
-}
-
-.note:nth-child(2) {
-    transform: rotate(1.5deg);
-    background: #fff8fb;
-}
-
-.note:nth-child(3) {
-    transform: rotate(-1.8deg);
-    background: #fffaf2;
-}
-
-.tape {
-    width: 75px;
-    height: 25px;
-    background: rgba(241,184,199,.55);
-    position: absolute;
-    top: -10px;
-    left: 50%;
-    transform: translateX(-50%) rotate(-2deg);
-}
-
-.note h3 {
-    font-family: 'Caveat', cursive;
-    font-size: 30px;
-    color: #bf6888;
-    margin-top: 15px;
-}
-
-.note p {
-    line-height: 1.8;
-    font-size: 14px;
+.story-text {
+  max-width: 650px;
+  font-family: 'Caveat', cursive;
+  font-size: 25px;
+  color: #795763;
 }
 
 /* PHOTOS */
-
-.photos {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 35px;
-    align-items: center;
+.memories {
+  width: min(1000px, 95vw);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 35px;
+  margin-top: 15px;
 }
 
 .polaroid {
-    background: white;
-    padding: 12px 12px 35px;
-    box-shadow: 0 8px 20px rgba(100,60,75,.18);
-    transition: .3s;
+  background: #fff;
+  padding: 12px 12px 28px;
+  box-shadow: 0 12px 28px rgba(120,70,85,.15);
+  transition: .35s;
 }
 
-.polaroid:nth-child(1) { transform: rotate(-4deg); }
-.polaroid:nth-child(2) { transform: rotate(3deg); }
-.polaroid:nth-child(3) { transform: rotate(-2deg); }
-.polaroid:nth-child(4) { transform: rotate(4deg); }
-.polaroid:nth-child(5) { transform: rotate(-3deg); }
+.polaroid:nth-child(1) { transform: rotate(-3deg); }
+.polaroid:nth-child(2) { transform: rotate(2deg); }
+.polaroid:nth-child(3) { transform: rotate(-1deg); }
+.polaroid:nth-child(4) { transform: rotate(3deg); }
+.polaroid:nth-child(5) { transform: rotate(-2deg); }
 
 .polaroid:hover {
-    transform: rotate(0deg) scale(1.04);
+  transform: translateY(-10px) rotate(0deg) scale(1.03);
 }
 
 .polaroid img {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-    background: #f8dce7;
+  width: 100%;
+  aspect-ratio: 1 / 1.12;
+  object-fit: cover;
+  display: block;
 }
 
 .caption {
-    text-align: center;
-    font-family: 'Caveat', cursive;
-    font-size: 22px;
-    margin-top: 8px;
-    color: #8f5a6c;
+  font-family: 'Caveat', cursive;
+  font-size: 21px;
+  text-align: center;
+  margin-top: 10px;
 }
 
-/* LOVE LIST */
-
-.love-box {
-    max-width: 750px;
-    margin: auto;
-    background: rgba(255,255,255,.7);
-    padding: 45px;
-    border-radius: 30px;
-    box-shadow: 0 15px 40px rgba(150,80,105,.12);
+/* THINGS I LOVE */
+.love-grid {
+  width: min(850px, 95vw);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
 }
 
-.love-item {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    margin: 20px 0;
-    font-size: 15px;
+.love-card {
+  background: rgba(255,255,255,.7);
+  padding: 25px;
+  border-radius: 18px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(140,80,100,.08);
 }
 
-.love-item .icon {
-    font-size: 25px;
+.love-card .heart {
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+
+.love-card p {
+  font-family: 'Caveat', cursive;
+  font-size: 22px;
+  margin: 5px;
+}
+
+/* FAVORITE THINGS */
+.favorites {
+  width: min(750px, 95vw);
+  text-align: center;
+}
+
+.favorite {
+  background: #fff;
+  margin: 14px;
+  padding: 20px 25px;
+  border-radius: 15px;
+  box-shadow: 0 8px 22px rgba(130,70,90,.1);
+}
+
+.favorite span {
+  font-size: 25px;
 }
 
 /* LETTER */
-
 .letter {
-    max-width: 750px;
-    margin: auto;
-    background: #fffdf8;
-    padding: 55px 45px;
-    box-shadow: 0 10px 30px rgba(100,60,70,.13);
-    position: relative;
-    border-radius: 4px;
+  width: min(700px, 94vw);
+  background: #fffdf9;
+  padding: 45px;
+  box-shadow: 0 15px 45px rgba(110,70,80,.14);
+  border-radius: 5px;
+  position: relative;
 }
 
 .letter:before {
-    content: "♡";
-    position: absolute;
-    top: 15px;
-    right: 25px;
-    font-size: 35px;
-    color: #e89ab4;
+  content: "♡";
+  position: absolute;
+  top: 15px;
+  right: 22px;
+  color: #d38a9e;
+  font-size: 28px;
 }
 
 .letter p {
-    font-family: 'Caveat', cursive;
-    font-size: 24px;
-    line-height: 1.6;
+  font-family: 'Caveat', cursive;
+  font-size: 24px;
 }
 
 .signature {
-    text-align: right;
-    font-family: 'Caveat', cursive;
-    font-size: 32px;
-    color: #bd6484;
-}
-
-/* MUSIC */
-
-.music-box {
-    text-align: center;
-    background: rgba(255,255,255,.65);
-    border-radius: 30px;
-    padding: 40px;
-    max-width: 600px;
-    margin: auto;
-}
-
-.music-box h3 {
-    font-family: 'Caveat', cursive;
-    font-size: 35px;
-    margin: 5px;
-}
-
-.music-btn {
-    margin-top: 20px;
-    padding: 13px 25px;
-    border: none;
-    border-radius: 30px;
-    background: #d982a1;
-    color: white;
-    cursor: pointer;
+  text-align: right;
+  font-family: 'Caveat', cursive;
+  font-size: 27px;
+  color: #ad6077;
 }
 
 /* SECRET */
-
-.secret {
-    text-align: center;
-    padding-bottom: 120px;
+.secret-box {
+  text-align: center;
+  max-width: 650px;
 }
 
-.secret-btn {
-    padding: 16px 35px;
-    background: #d97f9f;
-    border: none;
-    border-radius: 50px;
-    color: white;
-    font-size: 15px;
-    cursor: pointer;
-    box-shadow: 0 8px 25px rgba(190,90,125,.25);
+.secret-message {
+  display: none;
+  margin-top: 30px;
+  padding: 30px;
+  background: rgba(255,255,255,.8);
+  border-radius: 18px;
+  animation: appear .7s ease;
 }
 
-.hidden-message {
-    display: none;
-    max-width: 650px;
-    margin: 35px auto 0;
-    padding: 40px;
-    background: rgba(255,255,255,.85);
-    border-radius: 30px;
-    animation: appear 1s ease;
-}
-
-.hidden-message h3 {
-    font-family: 'DM Serif Display', serif;
-    font-size: 38px;
-    color: #c25d82;
-}
-
-.hidden-message p {
-    font-family: 'Caveat', cursive;
-    font-size: 25px;
-    line-height: 1.6;
-}
-
-footer {
-    text-align: center;
-    padding: 40px;
-    font-family: 'Caveat', cursive;
-    font-size: 23px;
-    color: #ad6a82;
+.secret-message p {
+  font-family: 'Caveat', cursive;
+  font-size: 27px;
 }
 
 @keyframes appear {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-@media(max-width:600px) {
-    .hero-card {
-        padding: 45px 20px;
-    }
-
-    section {
-        padding: 65px 18px;
-    }
-
-    .section-title h2 {
-        font-size: 40px;
-    }
-
-    .letter {
-        padding: 40px 25px;
-    }
-
-    .letter p {
-        font-size: 22px;
-    }
+footer {
+  text-align: center;
+  padding: 40px 20px 70px;
+  color: #98727d;
+  font-family: 'Caveat', cursive;
+  font-size: 22px;
 }
 </style>
 </head>
 
 <body>
 
-<!-- Floating hearts -->
-<div class="heart">♡</div>
-<div class="heart">♥</div>
-<div class="heart">♡</div>
-<div class="heart">♥</div>
-<div class="heart">♡</div>
+<div class="decor d1">♡</div>
+<div class="decor d2">✦</div>
+<div class="decor d3">♡</div>
+<div class="decor d4">✿</div>
 
-<!-- OPENING -->
+<!-- HOME -->
+<section id="home">
+  <div class="home-card">
+    <div class="tiny">a little something for</div>
 
-<div class="hero" id="top">
-    <div class="hero-card">
+    <h1>Maki ♡</h1>
 
-        <div class="small">a little something for</div>
-
-        <h1>Maki ♡</h1>
-
-        <p>our little story</p>
-
-        <div class="date">
-            October 1, 2021 — October 1, 2026
-            <br>
-            five years of us ♡
-        </div>
-
-        <a href="#story">
-            <button class="open-btn">open our scrapbook ♡</button>
-        </a>
-
-    </div>
-</div>
-
-
-<!-- OUR STORY -->
-
-<section id="story">
-
-    <div class="section-title">
-        <span>five years of memories</span>
-        <h2>Our Little Story</h2>
+    <div class="subtitle">
+      five years, countless memories,<br>
+      and still you.
     </div>
 
-    <div class="story">
-
-        <div class="note">
-            <div class="tape"></div>
-            <h3>🎬 Movie Days</h3>
-            <p>
-                Some of my favorite moments are simply watching movies
-                together. Nothing fancy — just being beside you makes
-                an ordinary day feel special.
-            </p>
-        </div>
-
-        <div class="note">
-            <div class="tape"></div>
-            <h3>☕ Cafe Dates</h3>
-            <p>
-                Eating at cafes with you, talking about random things,
-                sharing food, and just spending time together.
-                Those little dates became some of my favorite memories.
-            </p>
-        </div>
-
-        <div class="note">
-            <div class="tape"></div>
-            <h3>🏔️ Baguio</h3>
-            <p>
-                Our Baguio trip will always have a special place in my
-                heart. Getting to travel together and experience new
-                places with you is something I hope we can keep doing.
-            </p>
-        </div>
-
+    <div class="date">
+      October 1, 2021 — October 1, 2026<br>
+      five years of us ♡
     </div>
 
+    <a class="btn" href="#story">open our scrapbook ♡</a>
+  </div>
 </section>
 
 
-<!-- PHOTOS -->
+<!-- OUR STORY -->
+<section id="story">
+  <div class="story">
+    <div class="tiny">page one</div>
+    <h2>Our Little Story ♡</h2>
 
-<section>
+    <div class="story-text">
+      Five years ago, on October 1, 2021,
+      our story began.
 
-    <div class="section-title">
-        <span>little snapshots of us</span>
-        <h2>Our Memories 📸</h2>
+      <br><br>
+
+      Since then, we've had so many little moments
+      that somehow became some of my favorite memories.
+
+      <br><br>
+
+      Movie nights, cafe dates, little adventures,
+      traveling to Baguio, laughing over random things,
+      and simply being together.
+
+      <br><br>
+
+      Here's a tiny scrapbook of some of them.
+    </div>
+  </div>
+</section>
+
+
+<!-- MEMORIES -->
+<section id="memories">
+  <div class="tiny">page two</div>
+  <h2>Our Memories 📷</h2>
+
+  <div class="memories">
+
+    <div class="polaroid">
+      <img src="photo1.jpg">
+      <div class="caption">where our little story began ♡</div>
     </div>
 
-    <div class="photos">
-
-        <div class="polaroid">
-            <img src="photo1.jpg" alt="Our memory">
-            <div class="caption">a favorite memory ♡</div>
-        </div>
-
-        <div class="polaroid">
-            <img src="photo2.jpg" alt="Our memory">
-            <div class="caption">just us ♡</div>
-        </div>
-
-        <div class="polaroid">
-            <img src="photo3.jpg" alt="Our memory">
-            <div class="caption">happy days</div>
-        </div>
-
-        <div class="polaroid">
-            <img src="photo4.jpg" alt="Our memory">
-            <div class="caption">together ♡</div>
-        </div>
-
-        <div class="polaroid">
-            <img src="photo5.jpg" alt="Our memory">
-            <div class="caption">another little moment</div>
-        </div>
-
+    <div class="polaroid">
+      <img src="photo2.jpg">
+      <div class="caption">one of my favorite nights with you</div>
     </div>
 
+    <div class="polaroid">
+      <img src="photo3.jpg">
+      <div class="caption">just us, doing our favorite thing ♡</div>
+    </div>
+
+    <div class="polaroid">
+      <img src="photo4.jpg">
+      <div class="caption">my favorite place is beside you</div>
+    </div>
+
+    <div class="polaroid">
+      <img src="photo5.jpg">
+      <div class="caption">another little adventure with you ♡</div>
+    </div>
+
+  </div>
 </section>
 
 
 <!-- THINGS I LOVE -->
+<section id="love">
+  <div class="tiny">page three</div>
+  <h2>Things I Love About You</h2>
 
-<section>
+  <div class="love-grid">
 
-    <div class="section-title">
-        <span>there are so many things</span>
-        <h2>Things I Love About You ♡</h2>
+    <div class="love-card">
+      <div class="heart">♡</div>
+      <p>How you always take care of me.</p>
     </div>
 
-    <div class="love-box">
-
-        <div class="love-item">
-            <div class="icon">♡</div>
-            <div>
-                I love how you always take care of me.
-            </div>
-        </div>
-
-        <div class="love-item">
-            <div class="icon">🌷</div>
-            <div>
-                I love how you always make sure I'm happy and comfortable.
-            </div>
-        </div>
-
-        <div class="love-item">
-            <div class="icon">☺️</div>
-            <div>
-                I love your smile. It is one of the things I could never get tired of seeing.
-            </div>
-        </div>
-
-        <div class="love-item">
-            <div class="icon">🫶</div>
-            <div>
-                I love all the little ways you show me that you care.
-            </div>
-        </div>
-
-        <div class="love-item">
-            <div class="icon">💗</div>
-            <div>
-                And most of all, I love that after five years, you're still the person I want beside me.
-            </div>
-        </div>
-
+    <div class="love-card">
+      <div class="heart">♡</div>
+      <p>How you always make sure I'm happy and comfortable.</p>
     </div>
 
+    <div class="love-card">
+      <div class="heart">♡</div>
+      <p>Your smile. I don't think I'll ever get tired of it.</p>
+    </div>
+
+    <div class="love-card">
+      <div class="heart">♡</div>
+      <p>The little things you do that make me feel loved.</p>
+    </div>
+
+    <div class="love-card">
+      <div class="heart">♡</div>
+      <p>All the ordinary moments that become special because you're there.</p>
+    </div>
+
+    <div class="love-card">
+      <div class="heart">♡</div>
+      <p>Simply being able to call you mine.</p>
+    </div>
+
+  </div>
 </section>
 
 
-<!-- MUSIC -->
+<!-- FAVORITES -->
+<section id="favorites">
+  <div class="tiny">page four</div>
+  <h2>Our Little Things ♡</h2>
 
-<section>
+  <div class="favorites">
 
-    <div class="section-title">
-        <span>our song</span>
-        <h2>Press Play ♫</h2>
+    <div class="favorite">
+      🎬 &nbsp; Watching movies together
     </div>
 
-    <div class="music-box">
-
-        <div style="font-size:45px;">🎧</div>
-
-        <h3>Best Part</h3>
-
-        <p>
-            Because sometimes one song can say what words can't. ♡
-        </p>
-
-        <button class="music-btn" onclick="openSong()">
-            ♪ listen with me
-        </button>
-
-        <p style="font-size:11px; margin-top:15px; opacity:.65;">
-            The button opens the song so you can listen while exploring our scrapbook.
-        </p>
-
+    <div class="favorite">
+      ☕ &nbsp; Eating at cafes
     </div>
 
+    <div class="favorite">
+      🏔️ &nbsp; Traveling to Baguio
+    </div>
+
+    <div class="favorite">
+      🤍 &nbsp; Doing absolutely nothing together
+    </div>
+
+  </div>
+</section>
+
+
+<!-- BEST PART -->
+<section id="best">
+  <div class="tiny">page five</div>
+  <h2>Best Part 🎵</h2>
+
+  <div class="story-text">
+    Maybe the best part isn't one particular memory.
+
+    <br><br>
+
+    It's knowing that after all these years,
+    I still get to make more memories with you.
+
+    <br><br>
+
+    More movies.<br>
+    More cafe dates.<br>
+    More little adventures.<br>
+    More Baguio trips.<br>
+    More ordinary days that somehow become special.
+  </div>
+
+  <br>
+
+  <a class="btn"
+     href="https://www.youtube.com/results?search_query=Best+Part+Daniel+Caesar+H.E.R."
+     target="_blank">
+    listen to our song ♡
+  </a>
 </section>
 
 
 <!-- LETTER -->
+<section id="letter">
+  <div class="tiny">page six</div>
+  <h2>A Letter For You 💌</h2>
 
-<section>
+  <div class="letter">
 
-    <div class="section-title">
-        <span>a letter from me to you</span>
-        <h2>Dear Maki, 💌</h2>
+    <p>
+      Maki,
+    </p>
+
+    <p>
+      Happy five years, love. ♡
+    </p>
+
+    <p>
+      I don't always know how to put everything
+      I feel into words, but I hope this little
+      scrapbook can show you even a tiny part of it.
+    </p>
+
+    <p>
+      I love how you take care of me and how you
+      always try to make sure I'm happy and comfortable.
+      I love your smile, your little ways of making me
+      feel cared for, and all the memories we've made
+      together.
+    </p>
+
+    <p>
+      Five years is such a long time, but when I think
+      about all the moments we've shared, I find myself
+      wanting so many more.
+    </p>
+
+    <p>
+      Thank you for being part of my life and for
+      staying beside me through all our little chapters.
+    </p>
+
+    <p>
+      Here's to the memories we've already made,
+      and to all the ones we haven't made yet. ♡
+    </p>
+
+    <div class="signature">
+      I love you,<br>
+      always ♡
     </div>
 
-    <div class="letter">
-
-        <p>
-            Happy 5th anniversary, love. ♡
-        </p>
-
-        <p>
-            It's kind of crazy to think that five years have already
-            passed since October 1, 2021. We've shared so many little
-            moments together — watching movies, eating at cafes,
-            travelling, and simply spending ordinary days beside each
-            other.
-        </p>
-
-        <p>
-            One thing I've always appreciated about you is how you take
-            care of me. You always make sure I'm okay, happy, and
-            comfortable, and I hope you know how much those little
-            things mean to me.
-        </p>
-
-        <p>
-            I also hope you know that I love your smile more than I
-            probably say. ♡
-        </p>
-
-        <p>
-            Thank you for all the memories we've made during these five
-            years. Thank you for staying, for caring, and for being
-            someone I can share both the exciting moments and the
-            ordinary ones with.
-        </p>
-
-        <p>
-            Here's to more cafe dates, more movies, more trips,
-            more random little moments, and hopefully many more years
-            of our story.
-        </p>
-
-        <p>
-            I love you. Happy anniversary. ♡
-        </p>
-
-        <div class="signature">
-            — yours, always ♡
-        </div>
-
-    </div>
-
+  </div>
 </section>
 
 
 <!-- SECRET -->
+<section id="secret">
+  <div class="secret-box">
 
-<section class="secret">
+    <div class="tiny">one last thing...</div>
 
-    <div class="section-title">
-        <span>wait...</span>
-        <h2>There's One More Thing 👀</h2>
-    </div>
+    <h2>There's a Little Secret ♡</h2>
 
-    <button class="secret-btn" onclick="showSecret()">
-        don't click this ♡
+    <p class="story-text">
+      You made it all the way here...
+      so I think you deserve one more thing.
+    </p>
+
+    <button class="btn" onclick="showSecret()">
+      open it ♡
     </button>
 
-    <div class="hidden-message" id="secretMessage">
+    <div class="secret-message" id="secretMessage">
+      <p>
+        If I could choose again,
+        I'd still choose all the little moments
+        that led me here with you. ♡
+      </p>
 
-        <h3>Okay... you found it. 🥹</h3>
-
-        <p>
-            If I had to choose one person to make all these memories
-            with again, I'd still choose you.
-        </p>
-
-        <p>
-            And if I could keep one thing from all these five years,
-            it would be all the little moments where I looked at you
-            and thought...
-        </p>
-
-        <p>
-            "I'm really happy it's you." ♡
-        </p>
-
-        <p>
-            I love you, Maki. More memories with you, please. 🌷
-        </p>
-
+      <p>
+        Happy 5th anniversary, Maki.
+        <br>
+        I love you. 🌷
+      </p>
     </div>
 
+  </div>
 </section>
 
-
 <footer>
-    made with love ♡ October 1, 2026
+  made with love ♡<br>
+  October 1, 2026
 </footer>
 
-
 <script>
-
 function showSecret() {
-    document.getElementById("secretMessage").style.display = "block";
-
-    document.getElementById("secretMessage")
-        .scrollIntoView({ behavior: "smooth", block: "center" });
+  document.getElementById("secretMessage").style.display = "block";
 }
-
-function openSong() {
-
-    window.open(
-        "https://www.youtube.com/results?search_query=Best+Part+Daniel+Caesar+H.E.R.",
-        "_blank"
-    );
-
-}
-
 </script>
 
 </body>
